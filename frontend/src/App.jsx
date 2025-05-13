@@ -7,6 +7,7 @@ import WatchPage from "./pages/WatchPage"
 import SearchPage from "./pages/SearchPage"
 import SearchHistoryPage from "./pages/SearchHistoryPage"
 import NotFoundPage from "./pages/NotFoundPage"
+import PersonDetailsPage from "./pages/PersonDetailsPage"
 import Footer from "./components/Footer"
 
 import { Toaster } from "react-hot-toast"
@@ -42,6 +43,8 @@ function App() {
       <Route path="/watch/:id" element={user ? <WatchPage/> : <Navigate to={"/login"}/>} />
       <Route path="/search" element={user ? <SearchPage/> : <Navigate to={"/login"}/>} />
       <Route path="/history" element={user ? <SearchHistoryPage/> : <Navigate to={"/login"}/>} />
+      <Route path="/person/:id" element={user ? <PersonDetailsPage/> : <Navigate to={"/login"}/>} />
+
       <Route path="/*" element={<NotFoundPage/>} />
 
     </Routes>
